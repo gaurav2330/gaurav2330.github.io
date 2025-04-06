@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaurav Sharma | Full-Stack Engineer</title>
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --bg-light: #f4f4f5;
+      --bg-dark: #1e1e1e;
+      --text-light: #ffffff;
+      --text-dark: #1a1a1a;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #666;
+    }
+
+    .toggle-mode {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 5px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 0.3rem;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job-title {
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .skills, .education {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skill, .edu {
+      background: #e5e7eb;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1 1 250px;
+    }
+
+    .dark-mode .skill, .dark-mode .edu {
+      background: #2a2a2a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
+
+  <header>
+    <h1>Gaurav Sharma</h1>
+    <p>Senior Software Engineer | Full-Stack Developer | Bengaluru</p>
+    <p><a href="mailto:sgaurav2326@gmail.com">sgaurav2326@gmail.com</a> | +91-8949446844</p>
+  </header>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-title">Senior Software Engineer – Engagedly Inc. (Aug 2024 – Present)</div>
+      <ul>
+        <li>Optimized complex SQL queries in Rails – 40% memory and 50% time improvement</li>
+        <li>Led Node.js integration with HRIS – 100+ seamless syncs, zero downtime</li>
+        <li>Graph-based career path system in Rails – improved navigation for 1,000+ users</li>
+        <li>Automated Excel import pipeline – 70% manual effort saved, 100% data accuracy</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Software Engineer – Engagedly Inc. (Aug 2021 – Aug 2024)</div>
+      <ul>
+        <li>Custom fields module (Rails + PostgreSQL) – 1M+ records migrated</li>
+        <li>AG Grid component with Elasticsearch – handled 500K+ data points</li>
+        <li>HRIS Ruby Gem SDK – improved sync by 30%</li>
+        <li>Node.js workflow automation – tracked 1,000+ user workflows</li>
+        <li>Custom scheduler (Bull.js, MongoDB) – cut sync setup time from 4h to 10min</li>
+        <li>Team Pulse system – improved engagement by 30%</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-title">Intern – Engagedly Inc. (May 2020 – Aug 2021)</div>
+      <ul>
+        <li>Modernized survey frontend – 30% faster load, 20% higher completion</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill"><strong>Languages:</strong> JavaScript, Ruby, SQL, Java, Coffeescript</div>
+      <div class="skill"><strong>Frameworks:</strong> Rails, Node.js, Express.js, React.js</div>
+      <div class="skill"><strong>Databases:</strong> PostgreSQL, MongoDB, Redis, Elasticsearch</div>
+      <div class="skill"><strong>Tools:</strong> RabbitMQ, Docker, AWS, Git, JSReports</div>
+      <div class="skill"><strong>Concepts:</strong> REST APIs, Microservices, CI/CD, Unit Testing</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education">
+      <div class="edu">
+        <strong>B.E. in Computer Science</strong><br/>
+        Chitkara University, Baddi, HP (2017–2021)<br/>
+        <em>Captain, University Basketball Team</em>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Gaurav Sharma. Built with ❤️ by Gaurav.
+  </footer>
+
+  <script>
+    // Save mode preference
+    const mode = localStorage.getItem('mode');
+    if (mode === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    document.querySelector('.toggle-mode').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('mode', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
